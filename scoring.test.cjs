@@ -1,0 +1,13 @@
+const assert = require('node:assert/strict');
+const { susScore, asqScore } = require('./Kuisioner/scoring.js');
+assert.equal(susScore([5,1,5,1,5,1,5,1,5,1]), 100);
+assert.equal(susScore([1,5,1,5,1,5,1,5,1,5]), 0);
+assert.equal(susScore(Array(10).fill(3)), 50);
+assert.equal(susScore([4,2,4,2,4,2,4,2,4,2]), 75);
+assert.equal(susScore([1,2]), null);
+assert.equal(susScore(Array(10).fill(null)), null);
+assert.equal(asqScore([2,3,4]), 3);
+assert.equal(asqScore([2,null,4]), 3);
+assert.equal(asqScore([null,7,null]), 7);
+assert.equal(asqScore([null,null,null]), null);
+console.log('Semua pengujian perhitungan SUS dan ASQ lulus.');
